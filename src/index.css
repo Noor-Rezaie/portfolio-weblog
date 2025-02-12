@@ -3,6 +3,29 @@
 @tailwind components;
 @tailwind utilities;
 
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+
+.oleo-script-regular {
+  font-family: "Oleo Script", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.oleo-script-bold {
+  font-family: "Oleo Script", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+
 
 @layer base {
     html {

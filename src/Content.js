@@ -10,6 +10,8 @@ import reactjs from "/react.png";
 import services_logo from "/logo1.png";
 
 import project1 from "/project1.png";
+import project4 from "/project4.png";
+import project3 from "/project3.png";
 import project2 from "/project2.png";
 import person_project from "/porjectImg.png";
 
@@ -49,8 +51,8 @@ export const content = {
   ],
   hero: {
     title: "Front-end Developer",
-    firstName: "NOOR",
-    LastName: "REZAIE",
+    firstName: "Noorullah",
+    LastName: "Rezaie",
     btnText: "Hire Me",
     image: Hero_person,
     hero_content: [
@@ -60,7 +62,7 @@ export const content = {
       },
       {
         count: "",
-        text: "Fronted Web Developer Skilled in JavaScript/React/Node js/ Tailwind css/Bootstrap css",
+        text: "Fronted Web Developer Skilled in JavaScript, React Js, Node js, Tailwind css and Bootstrap css.",
       },
     ],
   },
@@ -94,7 +96,13 @@ export const content = {
         details: "Fully experienced",
       },
       {
-        name: "Tailwind/Bootstrap",
+        name: "Bootstrap Css",
+        para: "Responsive web Applications",
+        details: "Responsive web Applications",
+        logo: services_logo,
+      },
+      {
+        name: "Tailwind Css",
         para: "Responsive web Applications",
         details: "Responsive web Applications",
         logo: services_logo,
@@ -126,17 +134,23 @@ export const content = {
       {
         title: "My Portfolio",
         image: project1,
-        link: "https://github.com/Noor-Rezaie/noor-portfolio",
+        link: "https://noor-weblog.vercel.app",
+      },
+      {
+        title: "Fast-Pizza-menu",
+        image: project3,
+        link: "https://fast-react-project.vercel.app",
       },
       {
         title: "Hotel Management",
         image: project2,
-        link: "https://github.com/Noor-Rezaie/react-final.git",
+        link: "https://hotel-management-chi-sandy.vercel.app",
       },
       {
-        title: "Showing...",
-        image: project2,
-        link: "https://github.com/Noor-Rezaie/react-final.git",
+        title: "Mern Ecomerce",
+        image: project4,
+        link: "#",
+        // link: "https:// HERE PASTE THE LINK",
       },
     ],
   },
@@ -181,6 +195,6 @@ export const content = {
   },
   Footer: {
     title: "Noor-Rezaie",
-    text: "All © Copy Right Reserved 2024",
+    text: "All © Copy Right Reserved 2025",
   },
 };

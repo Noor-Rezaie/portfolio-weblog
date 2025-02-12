@@ -6,10 +6,12 @@ import Projects from "./components/Projects";
 import Services from "./components/Services";
 import Skills from "./components/Skills";
 import Navbar from "./layouts/Navbar";
+import Blury from "./utils/Blury";
 
 function App() {
   return (
     <div>
+      <Blury />
       <Navbar />
       <Hero />
       <Skills />

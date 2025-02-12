@@ -1,4 +1,4 @@
-// /** @type {import('tailwindcss').Config} */
+/** @type {import('tailwindcss').Config} */
 // export default {
 //   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
 //   theme: {
@@ -8,7 +8,7 @@
 // };
 
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     fontFamily: {
@@ -21,6 +21,18 @@ module.exports = {
       padding: "4rem",
     },
     extend: {
+      animation: {
+        blob: "blob 7s infinite ease-in-out",
+      },
+      keyframes: {
+        blob: {
+          "0%": { transform: "translate(0, 0) scale(1)" },
+          "33%": { transform: "translate(30px, -20px) scale(1.1)" },
+          "66%": { transform: "translate(-30px, 20px) scale(0.9)" },
+          "100%": { transform: "translate(0, 0) scale(1)" },
+        },
+      },
+
       colors: {
         dark_primary: "#06223F",
         bg_light_primary: "#F5F9FD",

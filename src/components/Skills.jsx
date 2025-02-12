@@ -1,6 +1,5 @@
-import { HiOutlineArrowCircleLeft } from "react-icons/hi";
-import { content } from "../Content";
 import { createElement, useState } from "react";
+import { content } from "../Content";
 import Modal from "react-modal";
 
 // THE MODAL
@@ -31,9 +30,8 @@ const customStyles = {
 };
 Modal.setAppElement("#root");
 
-//
-// THE SKILLS FUNCTION.
 function Skills() {
+  ////////////////////////////
   const { skills } = content;
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [selectSkill, setSelectSkill] = useState(null);
@@ -47,96 +45,85 @@ function Skills() {
   function closeModal() {
     setIsOpenModal(false);
   }
+  ////////////////////////////
 
   return (
-    <section id="skills" className="min-h-screen bg-green-50">
-      {/* HERE IS WHERE WE CAN SHOW THE MODAL */}
-      <Modal
-        className="bg-green-300 md:w-2/6"
-        isOpen={isOpenModal}
-        onRequestClose={closeModal}
-        style={customStyles}
-      >
-        <div className="flex flex-col items-center gap-3">
-          <span className="flex items-center justify-between gap-4">
-            <img
-              src={selectSkill?.logo}
-              className="h-10"
-              alt="The skills images!"
-            />
-            <h5 className="text-xl font-bold">{selectSkill?.name}</h5>
-          </span>
-          {/* test for paragraph */}
-          <p className="px-1 text-xs !leading-8 list-decimal rounded-md md:text-sm font-Poppins">
-            {selectSkill?.details}
-          </p>
-          {/* <ul className="px-1 text-xs !leading-8 list-decimal rounded-md md:text-sm font-Poppins">
-            {skills.skills_content.map((value, index) => {
-              <li key={index}>{selectSkill?.details}</li>;
-            })}
-          </ul> */}
-        </div>
-        <br />
-
-        {/* <ol className="px-1 text-xs !leading-8 list-decimal rounded-md md:text-sm font-Poppins">
-          <li>In here we can write some text to be shown for</li>
-          <li>In here we can write is seeing this</li>
-          <li>In here we can write some text to be shown</li>
-        </ol> */}
-        <br />
-        <button
-          onClick={closeModal}
-          className="flex items-center justify-end bg-red-500 text-slate-200 btn"
+    <section id="skills" className="py-14 bg-green-50">
+      <div className="container px-6 mx-auto">
+        {/* ////////////////////////// */}
+        {/* HERE IS WHERE WE CAN SHOW THE MODAL */}
+        <Modal
+          className="bg-green-300 md:w-2/6"
+          isOpen={isOpenModal}
+          onRequestClose={closeModal}
+          style={customStyles}
         >
-          <HiOutlineArrowCircleLeft className="mr-2" />{" "}
-          <span className="font-bold text-slate-200">Close</span>
-        </button>
-      </Modal>
+          <div className="flex flex-col items-center gap-3">
+            <span className="flex items-center justify-between gap-4">
+              <img
+                src={selectSkill?.logo}
+                className="h-10"
+                alt="The skills images!"
+              />
+              <h5 className="text-xl font-bold">{selectSkill?.name}</h5>
+            </span>
+            {/* test for paragraph */}
+            <p className="px-1 text-xs !leading-8 list-decimal rounded-md md:text-sm font-Poppins">
+              {selectSkill?.details}
+            </p>
+          </div>
+          <br />
 
-      {/* THE MAIN CONETNET TO BE DISPALYED */}
-      <div className="mx-auto py-14 px-14 md:px-56 md:mx-auto">
-        <h1 className="">{skills.title}</h1>
-        <h4 className="text-slate-300">{skills.subtitle}</h4>
-        <br />
+          <br />
+          <button
+            onClick={closeModal}
+            // className="flex items-center justify-end bg-red-500 text-slate-200 btn"
+            className="w-full px-6 py-3 text-lg font-medium text-black transition-all duration-300 ease-in-out border-2 rounded-lg bg-green-50 border-slate-600 hover:bg-red-400 hover:text-white hover:border-transparent active:scale-95 active:shadow-md focus:outline-none focus:ring-4 focus:ring-blue-300"
+          >
+            {/* <HiOutlineArrowCircleLeft className="mr-2" />{" "} */}
+            <span className="font-bold text-black">Close</span>
+          </button>
+        </Modal>
+        {/* ////////////////////////// */}
 
-        {/* MAPPING THE PICTURES FOR SKILLS */}
-        <div className="flex flex-wrap justify-center gap-2 ">
+        {/* عنوان بخش */}
+        <div className="mb-10 text-center">
+          <h2 className="text-2xl font-bold text-green-800">{skills.title}</h2>
+          <h5 className="mt-2 text-lg text-slate-500">{skills.subtitle}</h5>
+        </div>
+
+        {/* نمایش مهارت‌ها */}
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
           {skills.skills_content.map((skill, index) => (
             <div
               key={index}
-              className="relative flex items-center w-full max-w-sm gap-6 p-6 m-2 bg-green-100 shadow-xl cursor-pointer backdrop-blur-lg rounded-xl group"
+              className="relative flex items-center gap-4 p-5 transition-all duration-300 bg-green-100 shadow-md rounded-xl group hover:scale-105 hover:shadow-lg"
             >
-              <div>
-                <img
-                  className="w-12 duration-200 rounded-lg group-hover:scale-110"
-                  src={skill.logo}
-                  alt="logos"
-                />
-              </div>
-              <div className="text-sm font-bold md:text-xl">
-                <h5>{skill.name}</h5>
-                <h6 className="text-sm italic md:text-xl text-slate-300">
-                  {" "}
-                  {skill.para}
-                </h6>
-                <span className="absolute text-xl cursor-pointer top-3 right-3">
-                  <button
-                    onClick={() => {
-                      setSelectSkill(skill);
-                      openModal();
-                    }}
-                    // onClick={() => setIsOpenModal(!isOpenModal)}
-                    className="bg-green-400 btn"
-                  >
-                    {createElement(skills.icon)}
-                  </button>
+              {/* آیکون مهارت */}
+              <img
+                className="transition-all duration-300 rounded-lg w-14 h-14 group-hover:scale-110"
+                src={skill.logo}
+                alt={skill.name}
+              />
 
-                  {/* Git button */}
-                  {/* <a href="#">
-                    <button className="">Veiw Git</button>
-                  </a> */}
-                </span>
+              {/* اطلاعات مهارت */}
+              <div className="flex flex-col">
+                <h5 className="text-lg font-semibold text-green-900">
+                  {skill.name}
+                </h5>
+                <h6 className="text-sm italic text-slate-500">{skill.para}</h6>
               </div>
+
+              {/* دکمه اطلاعات بیشتر */}
+              <button
+                onClick={() => {
+                  setSelectSkill(skill);
+                  openModal();
+                }}
+                className="absolute p-2 transition-all duration-200 bg-green-400 rounded-md top-3 right-3 hover:bg-green-500"
+              >
+                {createElement(skills.icon)}
+              </button>
             </div>
           ))}
         </div>

@@ -1,50 +1,44 @@
 import { content } from "../Content";
 import { HiMenu } from "react-icons/hi";
-import { createElement, useState } from "react";
 import { VscChromeClose } from "react-icons/vsc";
+import { createElement, useState } from "react";
 
 function Navbar() {
   const { nav } = content;
-  const [isOpen, setIsOpen] = useState(0);
-
-  // THIS IS FOR TOGGLEING THE HUMBERGER MENU BUTTON
-  const [isVisibleMenu, setIsVisibleMenu] = useState(false);
-  // const navigate = useNavigate();
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="flex justify-center w-full bg-green-50">
-      {/* new start*/}
+    <div className="fixed top-0 left-0 z-50 w-full">
+      {/* دکمه منو برای موبایل */}
       <button
-        onClick={() => setIsVisibleMenu(!isVisibleMenu)}
-        // onClick={() => {
-        //   console.log("clicked");
-        // }}
-        className="fixed z-50 p-1 duration-300 bg-green-500 rounded-md cursor-pointer top-10 left-10 text-slate-200"
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+        className="fixed z-50 p-3 text-white transition-all duration-300 bg-green-500 rounded-md shadow-2xl top-8 left-8"
       >
-        {!isVisibleMenu ? <HiMenu size={34} /> : <VscChromeClose size={34} />}
+        {isMenuOpen ? <VscChromeClose size={30} /> : <HiMenu size={30} />}
       </button>
+
+      {/* منوی ناوبری */}
       <nav
-        className={`fixed flex items-center md:gap-5 gap-2 md:px-6 md:py-3 px-3 py-2 bg-orange-100/45 rounded-xl backdrop-blur-lg shadow-sm z-[999] ${
-          isVisibleMenu ? "bottom-36 md:bottom-10" : "bottom-[-100%]"
+        className={`fixed bottom-10 left-1/2 transform -translate-x-1/2 bg-green-100/80 backdrop-blur-md shadow-md rounded-full px-5 py-3 flex items-center gap-4 transition-all duration-500 ${
+          isMenuOpen ? "opacity-100 scale-100" : "opacity-0 scale-95"
         }`}
       >
         {nav.map((item, index) => (
           <a
-            onClick={() => setIsOpen(index)}
-            className={`hover:scale-110  duration-300 rounded-full sm:cursor-pointer text-3xl p-4 ${
-              index === isOpen && "bg-green-200 text-slate-500"
-            }`}
             key={index}
             href={item.link}
+            onClick={() => setActiveIndex(index)}
+            className={`text-2xl p-3 rounded-full transition-all duration-300 ${
+              activeIndex === index
+                ? "bg-green-300 text-white"
+                : "text-green-700"
+            } hover:scale-110`}
           >
             {createElement(item.icon)}
           </a>
-          // <button key={index} onClick={() => setIsOpen(index)}>
-          //   navigate(`/skills`)
-          // </button>
         ))}
       </nav>
-      {/* new end */}
     </div>
   );
 }
