@@ -27,10 +27,12 @@ function Services() {
                 alt="Service Icon"
                 className="w-16 h-16 mx-auto mb-4"
               />
-              <h6 className="text-lg font-semibold text-green-900">
+              <h6 className="text-lg font-semibold text-green-900 poppins-bold-italic">
                 {content.title}
               </h6>
-              <p className="mt-2 text-left text-slate-600">{content.para}</p>
+              <p className="mt-2 text-left text-slate-600 poppins-medium-italic">
+                {content.para}
+              </p>
             </div>
           ))}
         </div>
