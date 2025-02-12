@@ -61,7 +61,9 @@ function Projects() {
                   alt="Project"
                   className="w-full max-w-xs rounded-md shadow-sm"
                 />
-                <h4 className="mt-3 text-lg font-bold">{content.title}</h4>
+                <h4 className="mt-3 text-lg font-bold oleo-script-regular">
+                  {content.title}
+                </h4>
                 <a href={content.link} className="mt-3 mb-4">
                   <button className="px-4 py-2 text-white transition-all duration-300 bg-green-600 rounded-lg shadow-md hover:scale-105 hover:bg-green-700">
                     Demo
