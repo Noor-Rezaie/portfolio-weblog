@@ -12,6 +12,7 @@ import services_logo from "/logo1.png";
 import project1 from "/project1.png";
 import project4 from "/project4.png";
 import project3 from "/project3.png";
+import project5 from "/project5.png";
 import project2 from "/project2.png";
 import person_project from "/porjectImg.png";
 
@@ -151,6 +152,11 @@ export const content = {
         image: project4,
         link: "#",
         // link: "https:// HERE PASTE THE LINK",
+      },
+      {
+        title: "World Wise",
+        image: project5,
+        link: "https://react-city-map.vercel.app",
       },
     ],
   },
