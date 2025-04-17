@@ -1,6 +1,6 @@
 import toast, { Toaster } from "react-hot-toast";
 import { content } from "../Content";
-import resume from "/resume.pdf";
+import resume from "/CV_Noorullah_Rezaie.pdf";
 
 function Hero() {
   const { hero } = content;
